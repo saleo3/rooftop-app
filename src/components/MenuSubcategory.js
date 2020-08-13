@@ -1,32 +1,35 @@
 import React, { useState, useEffect } from 'react';
-import './MenuSubCategory.css'
+import './MenuSubCategory.css';
+import { getTitle } from '../helpers';
 import arrowIcon from '../assets/arrow-icon.svg';
 
+function SubcategoryItem({ isActive = false, product }) {
+  const [enTitle, esTitle] = getTitle(product.translations);
 
-function SubcategoryItem({isActive = false, product}) {
   return (
     <div className={`subcategory-content ${isActive ? 'subcategory-content__active' : ''}`}>
-      <div className="product">{product.translations.en.title}</div>
-      <div className="translation">{product.translations.es.title}</div>
+      <div className="product">{enTitle}</div>
+      <div className="translation">{esTitle}</div>
     </div>
   );
 }
 
-function MenuSubcategory({products = [], showProducts}) {
+function MenuSubcategory({ products = [], showProducts }) {
   const [text, product] = products;
   const [isActive, openPanel] = useState(false);
+  const [enTitle, esTitle] = getTitle(text);
 
-    useEffect(() => {
-      openPanel(showProducts);
-    }, [showProducts])
+  useEffect(() => {
+    openPanel(showProducts);
+  }, [showProducts])
 
   return (
     <div className={`subcategory-container ${isActive ? 'subcategory-container__active' : ''}`}>
-      <div className={`subcategory-header ${showProducts? 'hide': ''}`} onClick={() => openPanel(!isActive)}>
-        <span>{`${text.en.title} (${text.es.title})`}</span>
-        <img src={arrowIcon} alt="arrow icon" className={isActive ? 'active' : '' } />
+      <div className={`subcategory-header ${showProducts ? 'hide' : ''}`} onClick={() => openPanel(!isActive)}>
+        <span>{`${enTitle} (${esTitle})`}</span>
+        <img src={arrowIcon} alt="arrow icon" className={isActive ? 'active' : ''} />
       </div>
-      {product.length > 0 && product.map((p, i) => <SubcategoryItem isActive={isActive} product={p} key={i}/>)}
+      {product.map((p, i) => <SubcategoryItem isActive={isActive} product={p} key={i} />)}
     </div>
   );
 }

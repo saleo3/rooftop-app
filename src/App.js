@@ -4,44 +4,29 @@ import './components/TopTitle'
 import TopTitle from './components/TopTitle';
 import MenuOptions from './components/MenuOptions';
 import Menu from './components/Menu';
+import { checkSubcategories, loadData, getTitle, checkArray } from './helpers';
 
 function App() {
-  const [state, setState] =  useState([]);
-  const [currentMenu, setMenu ] = useState(0);
+  const [state, setState] = useState([]);
+  const [currentMenu, setMenu] = useState(0);
+  const [searchText, searchHandler] = useState('');
 
   useEffect(() => {
-    async function loadData() {
-      const api = await fetch('https://api.adminsite.appsinti.com/menu/product');
-      const data = await api.json();
-      setState(data);
-    }
+    loadData(setState);
+  }, []);
 
-    loadData();
-  });
-
-  function checkSubcategories(menu) {
-    const custom = [{
-      translations: { "en":{"title":""},"es":{"title":""} },
-      products: menu.products
-    }]
-
-    return menu.subcategories.length === 0
-      ? custom
-      : menu.subcategories
-  }
-
-  const menuOptions = state.length > 0
-    ? state.map(category => category.translations.en.title)
-    : state;
-  const category = state.length > 0
-    ? checkSubcategories(state[currentMenu])
-    : [];
+  // Check if array has data first
+  const addCallback = checkArray(state);
+  // Get Menu Categories to display
+  const menuOptions = addCallback(() => state.map(category => getTitle(category.translations)[0]));
+  // Get subcategories
+  const subcategories = addCallback(() => checkSubcategories(state[currentMenu]));
 
   return (
     <div className="App">
       <TopTitle />
       <MenuOptions options={menuOptions} menu={currentMenu} handler={setMenu} />
-      <Menu subcategories={category} />
+      <Menu subcategories={subcategories} searchText={searchText} handler={searchHandler} />
     </div>
   );
 }

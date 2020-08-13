@@ -30,6 +30,7 @@
   padding-top: 9px;
   padding-bottom: 9px;
   border-bottom: 1px solid #DDDDDD;
+  cursor: pointer;
 }
 
 .subcategory-header.hide {
@@ -37,7 +38,7 @@
 }
 
 .subcategory-header > img {
-  transition: all ease-in-out 500ms;
+  transition: all ease-in-out 250ms;
 }
 
 .subcategory-header > img.active {
