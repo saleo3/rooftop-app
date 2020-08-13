@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="23px" height="23px" viewBox="0 0 23 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>magnifying-glass</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Food_Menu" transform="translate(-19.000000, -126.000000)" stroke="#2B3245">
+            <g id="magnifying-glass">
+                <g transform="translate(19.000000, 126.000000)">
+                    <path d="M20.933,21.814 L15.833,16.714 C12.1896407,19.8806218 6.69266832,19.5922131 3.40068557,16.061716 C0.108702825,12.5312189 0.204878188,7.02752601 3.6182021,3.6142021 C7.03152601,0.200878188 12.5352189,0.104702825 16.065716,3.39668557 C19.5962131,6.68866832 19.8846218,12.1856407 16.718,15.829 L21.818,20.929 C22.060087,21.1743338 22.060087,21.5686662 21.818,21.814 C21.7017285,21.9336002 21.5418014,22.0007479 21.375,22 C21.2089527,21.998474 21.0501769,21.9316589 20.933,21.814 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

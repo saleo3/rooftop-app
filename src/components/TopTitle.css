@@ -1,0 +1,13 @@
+
+.topTitle {
+  min-width: 360px;
+  height: 44px;
+  background: transparent linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
+  box-shadow: 0px 6px 10px #00000029;
+  text-align: center;
+  font: Heavy 21px/14px Avenir;
+  letter-spacing: 0px;
+  color: #374458;
+  margin: 0 auto;
+  padding: 8px 0;
+}

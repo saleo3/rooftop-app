@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="9px" viewBox="0 0 16 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>back-7</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Food_Menu" transform="translate(-310.000000, -185.000000)" fill="#374458" fill-rule="nonzero">
+            <g id="back-7">
+                <g transform="translate(318.000000, 189.000000) rotate(90.000000) translate(-318.000000, -189.000000) translate(306.000000, 177.000000)">
+                    <rect id="Rectángulo_621-7" opacity="0" x="0" y="0" width="24" height="24"></rect>
+                    <g id="Grupo_2912-7" transform="translate(11.999000, 12.000000) rotate(180.000000) translate(-11.999000, -12.000000) translate(6.999000, 4.000000)">
+                        <g id="icon_62_7">
+                            <path d="M1,16 C0.595604102,15.9999137 0.23106595,15.7562725 0.0763220219,15.3826546 C-0.078421906,15.0090366 0.00709208442,14.5789943 0.293,14.293 L6.586,8 L0.293,1.707 C-0.0859722095,1.31462111 -0.0805523739,0.690915223 0.305181425,0.305181425 C0.690915223,-0.0805523739 1.31462111,-0.0859722095 1.707,0.293 L8.707,7.293 C8.8950834,7.48060853 9.00078757,7.73534548 9.00078757,8.001 C9.00078757,8.26665452 8.8950834,8.52139147 8.707,8.709 L1.707,15.709 C1.5191803,15.8958162 1.26490808,16.0004742 1,16 Z" id="Trazado_3829-7"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
