@@ -14,18 +14,13 @@ function SubcategoryItem({ isActive = false, product }) {
   );
 }
 
-function MenuSubcategory({ products = [], showProducts }) {
+function MenuSubcategory({ products = [], isActive, handler }) {
   const [text, product] = products;
-  const [isActive, openPanel] = useState(false);
   const [enTitle, esTitle] = getTitle(text);
-
-  useEffect(() => {
-    openPanel(showProducts);
-  }, [showProducts])
 
   return (
     <div className={`subcategory-container ${isActive ? 'subcategory-container__active' : ''}`}>
-      <div className={`subcategory-header ${showProducts ? 'hide' : ''}`} onClick={() => openPanel(!isActive)}>
+      <div className={`subcategory-header ${enTitle === '' ? 'hide' : ''}`} onClick={handler}>
         <span>{`${enTitle} (${esTitle})`}</span>
         <img src={arrowIcon} alt="arrow icon" className={isActive ? 'active' : ''} />
       </div>
