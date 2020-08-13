@@ -4,8 +4,7 @@ import MenuSubcategory from './MenuSubcategory';
 import { getTitle, checkArray, filterProducts } from '../helpers';
 import './Menu.css';
 
-function Menu({ subcategories, searchText, handler }) {
-  const [selection, setSelection] = useState(-1);
+function Menu({ subcategories, searchText, handler, selection }) {
   // Check if theres data and the filter by search and map the result
   const addCallback = checkArray(subcategories);
   const products = addCallback(() => {
@@ -21,7 +20,14 @@ function Menu({ subcategories, searchText, handler }) {
     <div className="menu">
       <SearchInput text={searchText} handler={handler} />
       {products.map(
-        (product, i) => <MenuSubcategory products={product} key={i} isActive={showProducts || selection === i} handler={() => setSelection(selection === i ? -1 : i)} />
+        (product, i) => (
+          <MenuSubcategory
+            products={product}
+            key={i}
+            isActive={showProducts || selection === i}
+            handler={() => handler(state => ({ ...state, selection: selection === i ? -13 : i }))}
+          />
+        )
       )}
     </div>
   );

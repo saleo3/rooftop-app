@@ -7,26 +7,29 @@ import Menu from './components/Menu';
 import { checkSubcategories, loadData, getTitle, checkArray } from './helpers';
 
 function App() {
-  const [state, setState] = useState([]);
-  const [currentMenu, setMenu] = useState(0);
-  const [searchText, searchHandler] = useState('');
+  const [categories, setCategories] = useState([]);
+  const [state, setState] = useState({
+    currentMenu: 0,
+    searchText: '',
+    selection: -1
+  })
 
   useEffect(() => {
-    loadData(setState);
+    loadData(setCategories);
   }, []);
 
   // Check if array has data first
-  const addCallback = checkArray(state);
+  const addCallback = checkArray(categories);
   // Get Menu Categories to display
-  const menuOptions = addCallback(() => state.map(category => getTitle(category.translations)[0]));
+  const menuOptions = addCallback(() => categories.map(category => getTitle(category.translations)[0]));
   // Get subcategories
-  const subcategories = addCallback(() => checkSubcategories(state[currentMenu]));
+  const subcategories = addCallback(() => checkSubcategories(categories[state.currentMenu]));
 
   return (
     <div className="App">
       <TopTitle />
-      <MenuOptions options={menuOptions} menu={currentMenu} handlers={[setMenu, searchHandler]} />
-      <Menu subcategories={subcategories} searchText={searchText} handler={searchHandler} />
+      <MenuOptions options={menuOptions} menu={state.currentMenu} handler={setState} />
+      <Menu subcategories={subcategories} searchText={state.searchText} handler={setState} selection={state.selection} />
     </div>
   );
 }
