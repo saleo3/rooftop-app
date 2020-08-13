@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './MenuSubCategory.css';
+import './MenuSubCategory.scss';
 import { getTitle } from '../helpers';
 import arrowIcon from '../assets/arrow-icon.svg';
 
