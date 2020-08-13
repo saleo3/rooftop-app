@@ -25,7 +25,7 @@ function App() {
   return (
     <div className="App">
       <TopTitle />
-      <MenuOptions options={menuOptions} menu={currentMenu} handler={setMenu} />
+      <MenuOptions options={menuOptions} menu={currentMenu} handlers={[setMenu, searchHandler]} />
       <Menu subcategories={subcategories} searchText={searchText} handler={searchHandler} />
     </div>
   );

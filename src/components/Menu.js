@@ -16,7 +16,6 @@ function Menu({ subcategories, searchText, handler }) {
 
   // This one is only when there's no subcategories but just products
   const showProducts = subcategories.length > 0 ? getTitle(subcategories[0].translations)[0] === '' : false;
-  console.log(showProducts);
 
   return (
     <div className="menu">

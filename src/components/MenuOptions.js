@@ -1,11 +1,11 @@
 import React from 'react';
 import './MenuOptions.scss';
 
-function MenuOptions({ options, menu, handler }) {
+function MenuOptions({ options, menu, handlers: [setMenu, searchHandler] }) {
   return (
     <nav className="menuContainer">
       {options.map(
-        (option, i) => <a href="#" key={i} className={i === menu ? 'active' : ''} onClick={() => handler(i)}>{option}</a>
+        (option, i) => <a href="#" key={i} className={i === menu ? 'active' : ''} onClick={() => { setMenu(i); searchHandler('') }}>{option}</a>
       )}
     </nav>
   );
