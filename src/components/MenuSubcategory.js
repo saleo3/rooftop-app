@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './MenuSubCategory.scss';
 import { getTitle } from '../helpers';
 import arrowIcon from '../assets/arrow-icon.svg';

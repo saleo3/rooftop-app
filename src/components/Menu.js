@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import SearchInput from './SearchInput';
 import MenuSubcategory from './MenuSubcategory';
 import { getTitle, checkArray, filterProducts } from '../helpers';
